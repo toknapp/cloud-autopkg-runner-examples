@@ -62,16 +62,6 @@ jobs:
 
           mkdir "${MUNKI_DIR}/pkgs"
 
-      - name: Setup Metadata Files
-        run: |
-          if [[ ! -f /tmp/autopkg_metadata.json ]]; then
-              echo "autopkg_metadata.json not found. Creating an empty file."
-              echo "{}" > /tmp/autopkg_metadata.json
-          fi
-
-          echo "Copying autopkg_metadata.json to original_autopkg_metadata.json to detect changes."
-          cp /tmp/autopkg_metadata.json original_autopkg_metadata.json
-
       - name: AutoPkg Repo Add
         run: |
           cat "${{ github.workspace }}/AutoPkg/repo_list.txt" | xargs autopkg repo-add
@@ -93,38 +83,15 @@ jobs:
 
       - name: Run AutoPkg
         run: |
-          uv run autopkg-run --recipe-list "${{ steps.recipe_list.outputs.RECIPE_LIST }}"
-
-      # - name: Combine Reports
-      #   run: |
-      #     combined_plist="autopkg-combined-receipts-$(date -u +%Y%m%d-%H%M%S).plist"
-
-      #     # Create a new plist file or clear the existing one
-      #     /usr/libexec/PlistBuddy -c 'Clear dict' "${combined_plist}"
-
-      #     # Find all plist files matching *receipt*.plist in the cache directory
-      #     cache_dir="$(defaults read com.github.autopkg CACHE_DIR)"
-      #     plist_files=($(find "${cache_dir}" -type f -regex ".*-receipt-[0-9]\{8\}-[0-9]\{6\}\.plist$"))
-
-      #     for plist in "${plist_files[@]}"; do
-      #       local plist_name=$(basename "${plist}" .plist)
-      #       echo "Adding ${plist} to combined receipts."
-
-      #       # Add a new dictionary for this receipt under its name
-      #       /usr/libexec/PlistBuddy -c "Add :${plist_name} array" "${combined_plist}"
-
-      #       # Merge the receipt data directly under the plist name
-      #       /usr/libexec/PlistBuddy -x -c "Merge ${plist} :${plist_name}" "${combined_plist}"
-      #     done
-
-      #     echo "Combined plist saved to ${combined_plist}"
+          uv run autopkg-run \
+            --cache-file metadata_cache.json \
+            --log-file autopkg_runner.log \
+            --recipe-list "${{ steps.recipe_list.outputs.RECIPE_LIST }}"
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: autopkg-artifacts-staging
+          name: autopkg-run-artifacts
           path: |
-            autopkg-combined-receipts-*.plist
             autopkg_runner.log
             metadata_cache.json
-            original_autopkg_metadata.json
