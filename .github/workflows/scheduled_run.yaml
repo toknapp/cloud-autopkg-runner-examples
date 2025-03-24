@@ -92,5 +92,6 @@ jobs:
         with:
           name: autopkg-run-artifacts
           path: |
+            AutoPkg/Cache/**/*.recipe*
             autopkg_runner.log
             metadata_cache.json
