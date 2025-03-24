@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Identifier</key>
+	<string>local.munki.MSOutlook</string>
+	<key>Input</key>
+	<dict>
+		<key>CHANNEL</key>
+		<string>Production</string>
+		<key>LOCALE_ID</key>
+		<string>1033</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/office</string>
+		<key>NAME</key>
+		<string>MSOutlook</string>
+		<key>PRODUCT</key>
+		<string>Outlook2019</string>
+		<key>VERSION</key>
+		<string>latest</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>blocking_applications</key>
+			<array>
+				<string>Microsoft Outlook</string>
+				<string>Microsoft Error Reporting</string>
+				<string>Microsoft AutoUpdate</string>
+			</array>
+			<key>catalogs</key>
+			<array>
+				<string>import</string>
+			</array>
+			<key>category</key>
+			<string>Office</string>
+			<key>description</key>
+			<string>Get a clear view of your email, calendars, contacts and even the weather to connect with others more effectively. Designed for Mac, Outlook efficiently keeps track of your digital life.</string>
+			<key>developer</key>
+			<string>Microsoft</string>
+			<key>display_name</key>
+			<string>Microsoft Outlook</string>
+			<key>icon_name</key>
+			<string>%NAME%.png</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.autopkg.munki.MSOutlook2019</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict>
+			<key>MSOfficeMacURLandUpdateInfoProvider</key>
+			<dict>
+				<key>git_hash</key>
+				<string>c129abfcf9be5d11801cbf64e4409034ec637774</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/MSOfficeUpdates/MSOfficeMacURLandUpdateInfoProvider.py</string>
+				<key>sha256_hash</key>
+				<string>c7a37638a1e5c74770cdc7909f633cde4bd8764f864eb8a19557ab27c826fdef</string>
+			</dict>
+		</dict>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.github.autopkg.download.MSOfficeMacProduct</key>
+			<dict>
+				<key>git_hash</key>
+				<string>db02edcc4fad1325e3f44ea31aa387a4ad39c998</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/MSOfficeUpdates/MSOfficeMacProduct.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>c7f9b0fa0e3634c0aab69e3248da0dca823e0749304a70c45272bbcb9db84df8</string>
+			</dict>
+			<key>com.github.autopkg.download.MSOutlook2019</key>
+			<dict>
+				<key>git_hash</key>
+				<string>55e47128864841e568cf20ccd2b852fea48faa50</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/MSOfficeUpdates/MSOutlook2019.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>b13716cd7e01d30ece62627aa12d9f77eb9dcaac617f11e6b83d9faa86dddd70</string>
+			</dict>
+			<key>com.github.autopkg.munki.MSOutlook2019</key>
+			<dict>
+				<key>git_hash</key>
+				<string>55e47128864841e568cf20ccd2b852fea48faa50</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/MSOfficeUpdates/MSOutlook2019.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>ac739eaa5a44df33c965cecd679ea92c656142aa4f23a0fd8e9a2cc0cd59eea2</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

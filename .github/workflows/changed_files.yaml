@@ -1,0 +1,19 @@
+name: Lint Changed Recipes
+
+on:
+  push:
+    paths:
+      - "AutoPkg/**/*.recipe"
+  pull_request:
+    paths:
+      - "AutoPkg/**/*.recipe"
+  workflow_dispatch:  # Enables manual triggering
+
+jobs:
+  lint-recipes:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Lint Recipes
+        run: plutil -lint AutoPkg/**/*.recipe

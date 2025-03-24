@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Identifier</key>
+	<string>local.munki.MSWord</string>
+	<key>Input</key>
+	<dict>
+		<key>CHANNEL</key>
+		<string>Production</string>
+		<key>LOCALE_ID</key>
+		<string>1033</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/office</string>
+		<key>NAME</key>
+		<string>MSWord</string>
+		<key>PRODUCT</key>
+		<string>Word2019</string>
+		<key>VERSION</key>
+		<string>latest</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>blocking_applications</key>
+			<array>
+				<string>Microsoft Word</string>
+				<string>Microsoft Error Reporting</string>
+				<string>Microsoft AutoUpdate</string>
+			</array>
+			<key>catalogs</key>
+			<array>
+				<string>import</string>
+			</array>
+			<key>category</key>
+			<string>Office</string>
+			<key>description</key>
+			<string>The Word you want. State-of-the-art editing, reviewing, and sharing tools make creating and polishing documents easy.</string>
+			<key>developer</key>
+			<string>Microsoft</string>
+			<key>display_name</key>
+			<string>Microsoft Word</string>
+			<key>icon_name</key>
+			<string>%NAME%.png</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.autopkg.munki.MSWord2019</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict>
+			<key>MSOfficeMacURLandUpdateInfoProvider</key>
+			<dict>
+				<key>git_hash</key>
+				<string>e5adee3cf2f31cc1a0a62d246eb16bf185e2dc12</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/MSOfficeUpdates/MSOfficeMacURLandUpdateInfoProvider.py</string>
+				<key>sha256_hash</key>
+				<string>acd21eb22750624e87219c7af8f0755eedbb4d42be403471ab1859d18b4c6169</string>
+			</dict>
+		</dict>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.github.autopkg.download.MSOfficeMacProduct</key>
+			<dict>
+				<key>git_hash</key>
+				<string>db02edcc4fad1325e3f44ea31aa387a4ad39c998</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/MSOfficeUpdates/MSOfficeMacProduct.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>c7f9b0fa0e3634c0aab69e3248da0dca823e0749304a70c45272bbcb9db84df8</string>
+			</dict>
+			<key>com.github.autopkg.download.MSWord2019</key>
+			<dict>
+				<key>git_hash</key>
+				<string>55e47128864841e568cf20ccd2b852fea48faa50</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/MSOfficeUpdates/MSWord2019.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>32e19ad797399ab5f7e80dccb86577cc7c53dadb844f2bf75b4111a4a531fdbb</string>
+			</dict>
+			<key>com.github.autopkg.munki.MSWord2019</key>
+			<dict>
+				<key>git_hash</key>
+				<string>55e47128864841e568cf20ccd2b852fea48faa50</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/MSOfficeUpdates/MSWord2019.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>67b6da59f357ec2943c2d2d071b89977b83c7a772bb6f227775a013a4421fb6e</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>
