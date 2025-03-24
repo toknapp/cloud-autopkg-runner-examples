@@ -22,8 +22,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: |
-            /tmp/autopkg_metadata.json
-            .venv
+            metadata_cache.json
           key: cache-${{ hashFiles('uv.lock') }}
 
       - name: Install uv
