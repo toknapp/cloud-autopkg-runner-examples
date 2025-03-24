@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Identifier</key>
-	<string>local.munki.MSPowerPoint</string>
+	<string>local.munki.MSOneNote</string>
 	<key>Input</key>
 	<dict>
 		<key>CHANNEL</key>
@@ -13,16 +13,16 @@
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/office</string>
 		<key>NAME</key>
-		<string>MSPowerPoint</string>
+		<string>MSOneNote</string>
 		<key>PRODUCT</key>
-		<string>PowerPoint2019</string>
+		<string>OneNote2019</string>
 		<key>VERSION</key>
 		<string>latest</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>blocking_applications</key>
 			<array>
-				<string>Microsoft PowerPoint</string>
+				<string>Microsoft OneNote</string>
 				<string>Microsoft Error Reporting</string>
 				<string>Microsoft AutoUpdate</string>
 			</array>
@@ -33,11 +33,11 @@
 			<key>category</key>
 			<string>Office</string>
 			<key>description</key>
-			<string>Communicate with confidence. PowerPoint for Mac makes it easy to create, collaborate and effectively present your ideas.</string>
+			<string>Your world, organized. Get organized in notebooks you can divide into sections and pages. With easy navigation and search, you'll always find your notes right where you left them.</string>
 			<key>developer</key>
 			<string>Microsoft</string>
 			<key>display_name</key>
-			<string>Microsoft PowerPoint</string>
+			<string>Microsoft OneNote</string>
 			<key>icon_name</key>
 			<string>%NAME%.png</string>
 			<key>name</key>
@@ -49,7 +49,7 @@
 		</dict>
 	</dict>
 	<key>ParentRecipe</key>
-	<string>com.github.autopkg.munki.MSPowerPoint2019</string>
+	<string>com.github.autopkg.munki.MSOneNote2019</string>
 	<key>ParentRecipeTrustInfo</key>
 	<dict>
 		<key>non_core_processors</key>
@@ -75,23 +75,23 @@
 				<key>sha256_hash</key>
 				<string>c7f9b0fa0e3634c0aab69e3248da0dca823e0749304a70c45272bbcb9db84df8</string>
 			</dict>
-			<key>com.github.autopkg.download.MSPowerPoint2019</key>
+			<key>com.github.autopkg.download.MSOneNote2019</key>
 			<dict>
 				<key>git_hash</key>
 				<string>55e47128864841e568cf20ccd2b852fea48faa50</string>
 				<key>path</key>
-				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/MSOfficeUpdates/MSPowerPoint2019.download.recipe</string>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/MSOfficeUpdates/MSOneNote2019.download.recipe</string>
 				<key>sha256_hash</key>
-				<string>b87cdbade17a979788df74ec2a6d6771ef47d1c0610b59f08326e75003529273</string>
+				<string>66554dcb05aa2fdaefc130d9bebf6c282302d264014046b77f80aeaee44d0a1d</string>
 			</dict>
-			<key>com.github.autopkg.munki.MSPowerPoint2019</key>
+			<key>com.github.autopkg.munki.MSOneNote2019</key>
 			<dict>
 				<key>git_hash</key>
 				<string>55e47128864841e568cf20ccd2b852fea48faa50</string>
 				<key>path</key>
-				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/MSOfficeUpdates/MSPowerPoint2019.munki.recipe</string>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/MSOfficeUpdates/MSOneNote2019.munki.recipe</string>
 				<key>sha256_hash</key>
-				<string>f5d0c30defca1d4a1e0e6fe7accd74eb341709c2bf5d0c8bbdbf95ecd636477f</string>
+				<string>d4017773cfc39fe62d32ae3f255fa3fad9cbe985ec2bf2cfa79f997ec5bc2498</string>
 			</dict>
 		</dict>
 	</dict>

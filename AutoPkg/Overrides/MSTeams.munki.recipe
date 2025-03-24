@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Identifier</key>
-	<string>local.munki.MSPowerPoint</string>
+	<string>local.munki.MSTeams</string>
 	<key>Input</key>
 	<dict>
 		<key>CHANNEL</key>
@@ -11,18 +11,19 @@
 		<key>LOCALE_ID</key>
 		<string>1033</string>
 		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps/office</string>
+		<string>apps</string>
 		<key>NAME</key>
-		<string>MSPowerPoint</string>
+		<string>MSTeams</string>
 		<key>PRODUCT</key>
-		<string>PowerPoint2019</string>
+		<string>Teams2</string>
 		<key>VERSION</key>
 		<string>latest</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>blocking_applications</key>
 			<array>
-				<string>Microsoft PowerPoint</string>
+				<string>Microsoft Teams</string>
+				<string>Microsoft Teams (work or school)</string>
 				<string>Microsoft Error Reporting</string>
 				<string>Microsoft AutoUpdate</string>
 			</array>
@@ -33,15 +34,22 @@
 			<key>category</key>
 			<string>Office</string>
 			<key>description</key>
-			<string>Communicate with confidence. PowerPoint for Mac makes it easy to create, collaborate and effectively present your ideas.</string>
+			<string>Microsoft Teams, the hub for team collaboration in Microsoft 365, integrates the people, content, and tools your team needs to be more engaged and effective.</string>
 			<key>developer</key>
 			<string>Microsoft</string>
 			<key>display_name</key>
-			<string>Microsoft PowerPoint</string>
+			<string>Microsoft Teams</string>
 			<key>icon_name</key>
 			<string>%NAME%.png</string>
 			<key>name</key>
 			<string>%NAME%</string>
+			<key>postinstall_script</key>
+			<string>#!/bin/sh
+if [ -e "/Applications/Microsoft Teams classic.app" ]; then
+	rm -r "/Applications/Microsoft Teams classic.app"
+fi
+exit 0
+			</string>
 			<key>unattended_install</key>
 			<true/>
 			<key>unattended_uninstall</key>
@@ -49,7 +57,7 @@
 		</dict>
 	</dict>
 	<key>ParentRecipe</key>
-	<string>com.github.autopkg.munki.MSPowerPoint2019</string>
+	<string>com.github.autopkg.munki.MSTeams2</string>
 	<key>ParentRecipeTrustInfo</key>
 	<dict>
 		<key>non_core_processors</key>
@@ -75,23 +83,23 @@
 				<key>sha256_hash</key>
 				<string>c7f9b0fa0e3634c0aab69e3248da0dca823e0749304a70c45272bbcb9db84df8</string>
 			</dict>
-			<key>com.github.autopkg.download.MSPowerPoint2019</key>
+			<key>com.github.autopkg.download.MSTeams2</key>
 			<dict>
 				<key>git_hash</key>
-				<string>55e47128864841e568cf20ccd2b852fea48faa50</string>
+				<string>a635a1d811c437f8c050995f2b29dedd2b5c8c3d</string>
 				<key>path</key>
-				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/MSOfficeUpdates/MSPowerPoint2019.download.recipe</string>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/MSOfficeUpdates/MSTeams2.download.recipe</string>
 				<key>sha256_hash</key>
-				<string>b87cdbade17a979788df74ec2a6d6771ef47d1c0610b59f08326e75003529273</string>
+				<string>00c49b22f492017eb11d835dfad2456001494238b49fdb47256ac8633bfb6b70</string>
 			</dict>
-			<key>com.github.autopkg.munki.MSPowerPoint2019</key>
+			<key>com.github.autopkg.munki.MSTeams2</key>
 			<dict>
 				<key>git_hash</key>
-				<string>55e47128864841e568cf20ccd2b852fea48faa50</string>
+				<string>1c73252ecbaa7ec9dc47b41210d2b69062ee2d22</string>
 				<key>path</key>
-				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/MSOfficeUpdates/MSPowerPoint2019.munki.recipe</string>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/MSOfficeUpdates/MSTeams2.munki.recipe</string>
 				<key>sha256_hash</key>
-				<string>f5d0c30defca1d4a1e0e6fe7accd74eb341709c2bf5d0c8bbdbf95ecd636477f</string>
+				<string>97cafc6a96131afb716fadb75aaf16c911a01840c9c7b962020e968cae75e3ec</string>
 			</dict>
 		</dict>
 	</dict>

@@ -3,7 +3,10 @@
   "Firefox.munki.recipe.yaml",
   "GoogleChrome.munki.recipe",
   "MSExcel.munki.recipe",
+  "MSOneNote.munki.recipe",
   "MSOutlook.munki.recipe",
   "MSPowerpoint.munki.recipe",
-  "MSWord.munki.recipe"
+  "MSTeams.munki.recipe",
+  "MSWord.munki.recipe",
+  "TheUnArchiver.munki"
 ]
