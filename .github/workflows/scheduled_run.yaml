@@ -87,6 +87,12 @@ jobs:
             --log-file autopkg_runner.log \
             --recipe-list "${{ steps.recipe_list.outputs.RECIPE_LIST }}"
 
+      - name: Commit Munki Changes
+        run: |
+           git add Munki/*
+           git commit -m "Adding updated Munki files"
+           git push
+
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
