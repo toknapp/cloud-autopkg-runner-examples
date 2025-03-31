@@ -62,7 +62,7 @@ jobs:
           # defaults write com.github.autopkg RECIPE_REPO_DIR "${AUTOPKG_DIR}/RecipeRepos"
           defaults write com.github.autopkg RECIPE_SEARCH_DIRS -array-add "${AUTOPKG_DIR}/Recipes"
 
-          mkdir "${MUNKI_DIR}/pkgs"
+          mkdir -p "${MUNKI_DIR}/pkgs"
 
       - name: AutoPkg Repo Add
         run: |
